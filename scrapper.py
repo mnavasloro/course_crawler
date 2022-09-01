@@ -51,10 +51,10 @@ for url_tag in urls:
             }
 
     df = df.append(row, ignore_index=True)
-    print(str(i) + '/' + str(x))
+    print(str(i) + '/' + str(x) + ': ' + url)
 
   except:
-    print('Problem while parsing')
+    print('Problem while parsing ' + url)
 
 df.to_csv('output_coursera.csv')
 print('Ended!')
