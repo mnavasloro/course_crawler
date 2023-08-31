@@ -51,7 +51,7 @@ for key in dictionary.keys():
 
   x = len(urls)
   print(str(x) + ' items to parse:')
-  i=341
+  i=0
 
   json_objects = []
   urls = urls[i:]
@@ -69,15 +69,15 @@ for key in dictionary.keys():
     #   continue
       
     y=len(courses_urls)
-    if i==0:
+    if y==0:
       print("0 from ", i)
       break
     for url_tag in tqdm(courses_urls, total=len(courses_urls), desc=str(i)+'/'+str(x)):
       j = j + 1
       
-      if j<33699:
-        print(j)
-        continue
+      # if j<33699:
+      #   print(j)
+      #   continue
       url = url_tag.text
       url_response = requests.get(url)
       url_soup = BeautifulSoup(url_response.text, 'html.parser')
